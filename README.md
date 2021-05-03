@@ -4,7 +4,7 @@ Demo for Python [google/python-fire](https://github.com/google/python-fire) libr
 
 ## Why Python file?
 * Fire can be applied on any Python object: functions, classes, modules, objects, dictionaries, lists, tuples, etc. They all work!
-* No need to parse explicetly command line arguments, instead Python definition is used
+* No need to parse explicitly command line arguments; instead, Python definition is used
 
 ## How to get help
 see [demo_simple_01.py](demo_simple_01.py)
@@ -188,6 +188,29 @@ Fire trace:
 5. Accessed property "farwell_everyone" (demo_with_class_03.py:20)
 6. Called routine "farwell_everyone" (demo_with_class_03.py:20)
 7. Accessed property "end_here" (demo_with_class_03.py:28)
+```
+
+## Known limitations
+* optional arguments (especially booleans) could interference with chained commands, be careful!
+```bash
+# ok
+$ python demo_simple_02.py "Alice" --smile "ツ"
+Hello, Alice ツ
+# error: "upper" parsed as boolean
+$ python demo_simple_02.py "Alice" --smile "ツ" upper
+Hello, Alice! ツ
+# error: "lower" parsed as boolean
+$ python demo_simple_02.py "Alice" --smile "ツ" lower
+.Hello, Alice! ツ
+# ok
+$ python demo_simple_02.py "Alice" --smile "ツ" --exclamation
+Hello, Alice! ツ
+# error: "upper" parsed as boolean
+$ python demo_simple_02.py "Alice" --smile "ツ" --exclamation upper
+Hello, Alice! ツ
+# ok
+$ python demo_simple_02.py "Alice" --smile "ツ" --exclamation=True upper
+HELLO, ALICE! ツ
 ```
 
 # References
