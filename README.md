@@ -136,3 +136,6 @@ Fire trace:
 6. Called routine "farwell_everyone" (demo_with_class_03.py:20)
 7. Accessed property "end_here" (demo_with_class_03.py:28)
 ```
+
+# References
+* [The Python Fire Guide](https://github.com/google/python-fire/blob/master/docs/guide.md)
