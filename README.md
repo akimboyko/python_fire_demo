@@ -9,15 +9,15 @@ Demo for Python [google/python-fire](https://github.com/google/python-fire) libr
 ## How to get help
 see [demo_simple_01.py](demo_simple_01.py)
 ```bash
-$ python demo_with_class_01.py --help
+$ python demo_simple_01.py --help
 ```
 
 
 ## How to run while passing arguments
 see [demo_simple_01.py](demo_simple_01.py)
 ```bash
-$ python demo_with_class_01.py hello_world "John Doe"
-Hello John Doe! ツ
+$ python demo_simple_01.py hello_world "John Doe"
+Hello John Doe!
 ```
 
 ## Expose all functions
@@ -43,7 +43,7 @@ def hello_world(name):
 ```
 
 ```bash
-$ python demo_simple_04.py hello_world --help
+$ python demo_simple_02.py --help
 NAME
     demo_simple_02.py - Let's say hello to someone and add a smile
 
@@ -76,19 +76,19 @@ NOTES
 see [demo_simple_02.py](demo_simple_02.py)
 ```python
 def hello_world(name, smile="ツ"):
-    pass
+    ...
 ```
 
 ```bash
 $ python demo_simple_02.py "Alice" --smile "ツ"
-Hello, Alice! ツ
+Hello, Alice ツ
 ```
 
 ## Boolean flags
 see [demo_simple_02.py](demo_simple_02.py)
 ```python
 def hello_world(name, smile="ツ", exclamation: bool = False):
-    pass
+    ...
 ```
 
 ```bash
@@ -99,7 +99,7 @@ Hello, Alice! ツ
 ## Functions with `_` are hidden
 see [demo_simple_03.py](demo_simple_03.py)
 ```bash
-$ python demo_with_class_03.py --help
+$ python demo_simple_03.py --help
 ```
 
 ## Explicetly define functions to be exposed
