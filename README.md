@@ -1,31 +1,37 @@
-## How to get help
+# Python fire demo
 
+Demo for Python [google/python-fire](https://github.com/google/python-fire) library
+
+## How to get help
+see [demo_simple_01.py](demo_simple_01.py)
 ```bash
 $ python demo_with_class_01.py --help
 ```
 
 
 ## How to run while passing arguments
+see [demo_simple_01.py](demo_simple_01.py)
 ```bash
 $ python demo_with_class_01.py hello_world "John Doe"
 Hello John Doe! ツ
 ```
 
 ## Expose all functions
-
+see [demo_simple_01.py](demo_simple_01.py)
 ```python
 if __name__ == "__main__":
     fire.Fire()
 ```
 
 ## Expose only a single function
-
+see [demo_simple_02.py](demo_simple_02.py)
 ```python
 if __name__ == "__main__":
     fire.Fire(hello_world)
 ```
 
 ## How to get help with docstring
+see [demo_simple_02.py](demo_simple_02.py)
 ```python
 def hello_world(name):
     """Let's say hello to someone and add a smile"""
@@ -37,6 +43,7 @@ $ python demo_with_class_02.py --help
 ```
 
 ## Optional parameters
+see [demo_simple_02.py](demo_simple_02.py)
 ```python
 def hello_world(name, smile="ツ"):
     pass
@@ -48,11 +55,13 @@ Hello, Alice! ツ
 ```
 
 ## Functions with `_` are hidden
+see [demo_simple_03.py](demo_simple_03.py)
 ```bash
 $ python demo_with_class_03.py --help
 ```
 
 ## Explicetly define functions to be exposed
+see [demo_simple_04.py](demo_simple_04.py)
 ```python
 if __name__ == "__main__":
     fire.Fire({
@@ -69,6 +78,7 @@ Usage: demo_simple_04.py <command>
 ```
 
 ## Running in interactive mode
+see [demo_simple_04.py](demo_simple_04.py)
 Use `--` to enter interactive mode 
 ```bash
 python demo_simple_04.py -- --interactive
@@ -82,18 +92,21 @@ Objects: component, demo_simple_04.py, hello_world, result, salut_le_monde, trac
 ```
 
 ## Grouping commands using Python class
+see [demo_with_class_01.py](demo_with_class_01.py)
 ```bash
 $ python demo_with_class_01.py hello_world "John Doe"
 Hello John Doe! ツ
 ```
 
 ## More optional arguments for class constructor
+see [demo_with_class_01.py](demo_with_class_01.py)
 ```bash
 $ python demo_with_class_01.py salut_le_monde "Monsieur Dupont" --smile ":)"
 Salut le monde, c'est moi Monsieur Dupont! :)
 ```
 
 ## Grouping commands with Python classes
+see [demo_with_class_02.py](demo_with_class_02.py)
 ```bash
 $ python demo_with_class_02.py greetings hello_world "John Doe"
 Hello John Doe! ツ
@@ -102,6 +115,7 @@ Adieu tout le monde
 ```
 
 ## Chaining functions, i.e., simple DSL
+see [demo_with_class_03.py](demo_with_class_03.py)
 ```bash
 python demo_with_class_03.py hello_world "John Doe" farwell_everyone end_here
 Hello John Doe! ツ
@@ -109,6 +123,7 @@ Farewell everyone
 ```
 
 ## Tracing
+see [demo_with_class_03.py](demo_with_class_03.py)
 ```bash
 $ python demo_with_class_03.py hello_world "John Doe" farwell_everyone end_here -- --trace
 
