@@ -2,6 +2,10 @@
 
 Demo for Python [google/python-fire](https://github.com/google/python-fire) library
 
+## Why Python file?
+* Fire can be applied on any Python object: functions, classes, modules, objects, dictionaries, lists, tuples, etc. They all work!
+* No need to parse explicetly command line arguments, instead Python definition is used
+
 ## How to get help
 see [demo_simple_01.py](demo_simple_01.py)
 ```bash
@@ -39,7 +43,29 @@ def hello_world(name):
 ```
 
 ```bash
-$ python demo_with_class_02.py --help
+$ python demo_simple_04.py hello_world --help
+NAME
+    demo_simple_02.py - Let's say hello to someone and add a smile
+
+SYNOPSIS
+    demo_simple_02.py NAME <flags>
+
+DESCRIPTION
+    Let's say hello to someone and add a smile
+
+POSITIONAL ARGUMENTS
+    NAME
+        Type: str
+        someone's name
+
+FLAGS
+    --smile=SMILE
+        Type: str
+        Default: 'ツ'
+        optional smile to add to the message
+
+NOTES
+    You can also use flags syntax for POSITIONAL ARGUMENTS
 ```
 
 ## Optional parameters
@@ -89,6 +115,17 @@ Objects: component, demo_simple_04.py, hello_world, result, salut_le_monde, trac
 (InteractiveConsole)
 >>> hello_world("test")
 'Hello test!'
+```
+
+## Call on return object
+see [demo_simple_04.py](demo_simple_04.py)
+```bash
+$ python demo_simple_04.py hello_world "Alice"
+Hello Alice!
+$ python demo_simple_04.py hello_world "Alice" upper
+HELLO ALICE!
+$ python demo_simple_04.py hello_world "Alice" lower
+hello alice!
 ```
 
 ## Grouping commands using Python class
