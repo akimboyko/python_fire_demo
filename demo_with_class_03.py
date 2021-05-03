@@ -10,7 +10,7 @@ class PhrasesGenerator():
         return self
 
     def salut_le_monde(self, name):
-        print(f"Salut le monde, c\'est moi {name}! {self._smile}")
+        print(f"Salut le monde, c'est moi {name}! {self._smile}")
         return self
 
     def ça_va(self, prenom):
