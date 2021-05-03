@@ -63,6 +63,10 @@ FLAGS
         Type: str
         Default: 'ツ'
         optional smile to add to the message
+    --exclamation=EXCLAMATION
+        Type: bool
+        Default: False
+        add an exclamation mark
 
 NOTES
     You can also use flags syntax for POSITIONAL ARGUMENTS
@@ -77,6 +81,18 @@ def hello_world(name, smile="ツ"):
 
 ```bash
 $ python demo_simple_02.py "Alice" --smile "ツ"
+Hello, Alice! ツ
+```
+
+## Boolean flags
+see [demo_simple_02.py](demo_simple_02.py)
+```python
+def hello_world(name, smile="ツ", exclamation: bool = False):
+    pass
+```
+
+```bash
+$ python demo_simple_02.py "Alice" --smile "ツ" --exclamation
 Hello, Alice! ツ
 ```
 
